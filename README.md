@@ -10,10 +10,15 @@
 
 ## To Get Started
 
+* `yarn global add ts-node typescript` to install ts-node and typescript globally
+
 Use Visual Studio Code's built in terminal (powershell) by pressing (<kbd>CTRL</kbd> + <kbd>`</kbd>), to use the following commands
 * `yarn` to install the npm dependencies required for the project
 * `yarn upgrade --latest` to upgrade the packages to their latest versions
 * `yarn start` to compile and run the code
+* `yarn start:prod` to compile and run the code in production mode
+* `yarn build` to compile and build the code
+* `yarn start:prod` to compile and build the code in production mode
 
 this will open a new window in Chrome
 * or open preferred browser and browse to `http://localhost:3000`

@@ -1,9 +1,7 @@
-body {
-    margin: 0;
-    h1 {
-        font-family: 'proxima-nova', sans-serif;
-    }
-    .react-image {
-        content: url('../images/react-webpack.png');
-    }
+h1 {
+    font-family: sans-serif;
+}
+
+.react-image {
+    content: url('../images/react-webpack.png');
 }

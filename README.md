@@ -1,4 +1,4 @@
-# React-Template
+# React-Mobx-Template
 
 ## Requirements
 

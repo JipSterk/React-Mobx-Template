@@ -38,11 +38,11 @@ const options: { env: string, build: boolean, hostname: string, port: number } =
     }
 ]);
 
-console.log(chalk.green.bold("\n#~~~~#~~~~# Options #~~~~#~~~~#"));
+console.log(chalk.green.bold('\n#~~~~#~~~~# Options #~~~~#~~~~#'));
 for (const option in options) {
     console.log(chalk.cyan.bold(`${option}: ${options[option]}`));
 }
-console.log(chalk.green.bold("\n#~~~~#~~~~#~~~~#~~~~#~~~~#~~~~#\n"));
+console.log(chalk.green.bold('\n#~~~~#~~~~#~~~~#~~~~#~~~~#~~~~#\n'));
 
 fs.writeFileSync(settingsFile, JSON.stringify(data, null, 4));
 

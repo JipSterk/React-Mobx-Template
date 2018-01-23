@@ -1,9 +1,9 @@
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackMerge from 'webpack-merge';
 
-import { root } from '../helpers/helpers';
 import { commonConfig } from './common.webpack';
 
 export const development: webpack.Configuration = webpackMerge(commonConfig({ env: 'development' }), {
@@ -13,7 +13,7 @@ export const development: webpack.Configuration = webpackMerge(commonConfig({ en
         'webpack/hot/dev-server'
     ],
     output: {
-        path: root('dist'),
+        path: path.resolve('dist'),
         filename: '[name].js',
         chunkFilename: '[id].chunk.js',
         publicPath: '/'
@@ -22,7 +22,7 @@ export const development: webpack.Configuration = webpackMerge(commonConfig({ en
         new ExtractTextPlugin('[name].css'),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            template: root('src', 'index.html')
+            template: path.resolve('src', 'index.html')
         })
     ]
 });

@@ -1,16 +1,16 @@
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackMerge from 'webpack-merge';
 
-import { root } from '../helpers/helpers';
 import { commonConfig } from './common.webpack';
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
 export const production: webpack.Configuration = webpackMerge(commonConfig({ env: 'production' }), {
     output: {
-        path: root('dist'),
+        path: path.resolve('dist'),
         filename: '[name].[hash].js',
         chunkFilename: '[id].[hash].chunk.js'
     },
@@ -31,7 +31,7 @@ export const production: webpack.Configuration = webpackMerge(commonConfig({ env
             'process.env.NODE_ENV': JSON.stringify(ENV)
         }),
         new HtmlWebpackPlugin({
-            template: root('src', 'index.html'),
+            template: path.resolve('src', 'index.html'),
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,

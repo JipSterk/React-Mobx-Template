@@ -5,11 +5,10 @@ import * as fs from 'fs-extra';
 import { build, startDevServer } from './webpack-runner';
 
 const settingsFile = './webpack-settings.json';
-const data: { env: string, build: boolean, hostname: string, port: number } = JSON.parse(
+const data: { env: string, build: boolean, hostname: string, port: number } =
     fs.existsSync(settingsFile) ?
-    fs.readFileSync(settingsFile).toString() :
-    '{ "hostname": "localhost", "port": 3000, "env": "dev", "build": false }'
-);
+        JSON.parse(fs.readFileSync(settingsFile).toString()) :
+        JSON.parse('{ "hostname": "localhost", "port": 3000, "env": "dev", "build": false }');
 
 const options: { env: string, build: boolean, hostname: string, port: number } = commandLineArgs([
     {

@@ -18,7 +18,7 @@ Use Visual Studio Code's built in terminal (powershell) by pressing (<kbd>CTRL</
 * `yarn start` to compile and run the code
 * `yarn start:prod` to compile and run the code in production mode
 * `yarn build` to compile and build the code
-* `yarn start:prod` to compile and build the code in production mode
+* `yarn build:prod` to compile and build the code in production mode
 
 this will open a new window in Chrome
 * or open preferred browser and browse to `http://localhost:3000`

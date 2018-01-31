@@ -7,8 +7,8 @@
     "scripts": {
         "start": "ts-node ./webpack/webpack.ts",
         "start:prod": "ts-node ./webpack/webpack.ts --env prod",
-        "build": "ts-node ./webpack/webpack.ts --build true",
-        "build:prod": "ts-node ./webpack/webpack.ts --build true --env prod"
+        "build": "ts-node ./webpack/webpack.ts --build",
+        "build:prod": "ts-node ./webpack/webpack.ts --build --env prod"
     },
     "license": "MIT",
     "devDependencies": {

@@ -29,10 +29,6 @@ export const commonConfig = (options: { env: string }): webpack.Configuration =>
                 {
                     test: /\.(jpe?g|png)$/,
                     use: 'file-loader',
-                },
-                {
-                    test: /\.json$/,
-                    use: 'json-loader'
                 }
             ]
         }

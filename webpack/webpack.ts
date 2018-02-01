@@ -8,7 +8,7 @@ const settingsFile = './webpack-settings.json';
 const data: { env: string, build: boolean, hostname: string, port: number } =
     fs.existsSync(settingsFile) ?
         JSON.parse(fs.readFileSync(settingsFile).toString()) :
-        JSON.parse('{ "hostname": "localhost", "port": 3000, "env": "dev", "build": false }');
+        JSON.parse('{ \'hostname\': \'localhost\', \'port\': 3000, \'env\': \'dev\', \'build\': false }');
 
 const options: { env: string, build: boolean, hostname: string, port: number } = commandLineArgs([
     {

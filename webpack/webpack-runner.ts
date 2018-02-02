@@ -14,10 +14,6 @@ export const startDevServer = (options: { env: string, build: boolean, hostname:
     else if (options.env === 'prod') {
         compiler = webpack(production);
     }
-    else {
-        options.env = 'dev';
-        compiler = webpack(development);
-    }
 
     server = new WebpackDevServer(compiler, {
         stats: {
@@ -28,7 +24,7 @@ export const startDevServer = (options: { env: string, build: boolean, hostname:
         publicPath: '/'
     });
 
-    server.listen(options.port, options.hostname, () => {
+    server.listen(options.port, options.hostname, (): void => {
         console.log(`\nStarting server on http://${options.hostname}:${options.port} in configuration: ${options.env}`)
     });
 }
@@ -46,12 +42,8 @@ export const build = (options: { env: string, build: boolean, hostname: string, 
     else if (options.env === 'prod') {
         compiler = webpack(production);
     }
-    else {
-        options.env = 'dev';
-        compiler = webpack(development);
-    }
 
-    compiler.run((error: Error, status: webpack.Stats) => {
+    compiler.run((error: Error, status: webpack.Stats): void => {
         if (status) {
             console.log(status);
         }

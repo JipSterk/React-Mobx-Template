@@ -4,12 +4,6 @@ import * as fs from 'fs-extra';
 
 import { build, startDevServer } from './webpack-runner';
 
-const settingsFile = './webpack-settings.json';
-const data: { env: string, build: boolean, hostname: string, port: number } =
-    fs.existsSync(settingsFile) ?
-        JSON.parse(fs.readFileSync(settingsFile).toString()) :
-        JSON.parse('{ \'hostname\': \'localhost\', \'port\': 3000, \'env\': \'dev\', \'build\': false }');
-
 const options: { env: string, build: boolean, hostname: string, port: number } = commandLineArgs([
     {
         name: 'env',
@@ -27,13 +21,13 @@ const options: { env: string, build: boolean, hostname: string, port: number } =
         name: 'hostname',
         alias: 'n',
         type: String,
-        defaultValue: data.hostname
+        defaultValue: 'localhost'
     },
     {
         name: 'port',
         alias: 'p',
         type: Number,
-        defaultValue: data.port
+        defaultValue: 3000
     }
 ]);
 
@@ -42,8 +36,6 @@ for (const option in options) {
     console.log(chalk.cyan.bold(`${option}: ${options[option]}`));
 }
 console.log(chalk.green.bold('\n#~~~~#~~~~#~~~~#~~~~#~~~~#~~~~#\n'));
-
-fs.writeFileSync(settingsFile, JSON.stringify(data, null, 4));
 
 if (options.build) {
     if (fs.existsSync('./dist')) {

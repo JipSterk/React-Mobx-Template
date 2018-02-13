@@ -7,7 +7,7 @@ import * as webpackMerge from 'webpack-merge';
 import { commonConfig } from './common.webpack';
 
 export const development: webpack.Configuration = webpackMerge(commonConfig({ env: 'development' }), {
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-eval-source-map',
     entry: [
         'webpack-dev-server/client',
         'webpack/hot/dev-server'

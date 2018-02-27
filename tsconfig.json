@@ -9,6 +9,7 @@
         "noImplicitReturns": false,
         "removeComments": true,
         "strictNullChecks": false,
+        "strict": true,
         "outDir": "dist",
         "lib": [
             "es6",
@@ -16,6 +17,11 @@
             "dom"
         ]
     },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/webpack.*.ts"
+    ],
     "exclude": [
         "./dist",
         "./node_modules"

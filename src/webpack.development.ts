@@ -4,13 +4,12 @@ import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackMerge from 'webpack-merge';
 
-import { commonConfig } from './common.webpack';
+import { commonConfig } from './webpack.common';
 
-export const development: webpack.Configuration = webpackMerge(commonConfig({ env: 'development' }), {
+const development: webpack.Configuration = webpackMerge(commonConfig, {
     devtool: 'cheap-eval-source-map',
     entry: [
-        'webpack-dev-server/client',
-        'webpack/hot/dev-server'
+        'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr&reload=ture',
     ],
     output: {
         path: path.resolve('dist'),
@@ -22,7 +21,11 @@ export const development: webpack.Configuration = webpackMerge(commonConfig({ en
         new ExtractTextPlugin('[name].css'),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            template: path.resolve('src', 'index.html')
+            template: path.resolve(__dirname, 'app', 'index.html')
         })
     ]
 });
+
+export =[
+    development
+];

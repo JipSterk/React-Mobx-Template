@@ -4,11 +4,9 @@ import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackMerge from 'webpack-merge';
 
-import { commonConfig } from './common.webpack';
+import { commonConfig } from './webpack.common';
 
-const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
-
-export const production: webpack.Configuration = webpackMerge(commonConfig({ env: 'production' }), {
+const production: webpack.Configuration = webpackMerge(commonConfig, {
     output: {
         path: path.resolve('dist'),
         filename: '[name].[hash].js',
@@ -28,10 +26,10 @@ export const production: webpack.Configuration = webpackMerge(commonConfig({ env
         }),
         new ExtractTextPlugin('[name].[hash].css'),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(ENV)
+            'process.env.NODE_ENV': JSON.stringify('production')
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve('src', 'index.html'),
+            template: path.resolve(__dirname, 'app', 'index.html'),
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -40,3 +38,8 @@ export const production: webpack.Configuration = webpackMerge(commonConfig({ env
         })
     ]
 });
+
+
+export =[
+    production
+];

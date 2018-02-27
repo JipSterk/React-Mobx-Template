@@ -9,8 +9,8 @@ import { commonConfig } from './webpack.common';
 const production: webpack.Configuration = webpackMerge(commonConfig, {
     output: {
         path: path.resolve('dist'),
-        filename: '[name].[hash].js',
-        chunkFilename: '[id].[hash].chunk.js'
+        filename: '[name].js',
+        chunkFilename: '[id].chunk.js'
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
@@ -24,7 +24,7 @@ const production: webpack.Configuration = webpackMerge(commonConfig, {
             },
             comments: false
         }),
-        new ExtractTextPlugin('[name].[hash].css'),
+        new ExtractTextPlugin('[name].css'),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),

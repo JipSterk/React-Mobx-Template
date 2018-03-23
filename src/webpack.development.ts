@@ -7,12 +7,13 @@ import * as webpackMerge from 'webpack-merge';
 import { commonConfig } from './webpack.common';
 
 const development: webpack.Configuration = webpackMerge(commonConfig, {
-    devtool: 'cheap-eval-source-map',
+    mode: 'production',
+    devtool: 'source-map',
     entry: [
         'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr&reload=true',
     ],
     output: {
-        path: path.resolve('dist'),
+        path: path.resolve(__dirname, '..', 'dist'),
         filename: '[name].js',
         chunkFilename: '[id].chunk.js',
         publicPath: '/'

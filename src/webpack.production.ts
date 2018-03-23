@@ -7,23 +7,16 @@ import * as webpackMerge from 'webpack-merge';
 import { commonConfig } from './webpack.common';
 
 const production: webpack.Configuration = webpackMerge(commonConfig, {
+    mode: 'production',
     output: {
-        path: path.resolve('dist'),
+        path: path.resolve(__dirname, '..', 'dist'),
         filename: '[name].js',
         chunkFilename: '[id].chunk.js'
     },
+    optimization: {
+        minimize: true
+    },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            beautify: false,
-            mangle: {
-                screw_ie8: true,
-                keep_fnames: true
-            },
-            compress: {
-                screw_ie8: true
-            },
-            comments: false
-        }),
         new ExtractTextPlugin('[name].css'),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
@@ -38,7 +31,6 @@ const production: webpack.Configuration = webpackMerge(commonConfig, {
         })
     ]
 });
-
 
 export =[
     production

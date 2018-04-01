@@ -18,9 +18,6 @@ const production: webpack.Configuration = webpackMerge(commonConfig, {
     },
     plugins: [
         new ExtractTextPlugin('[name].css'),
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
-        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'app', 'index.html'),
             minify: {

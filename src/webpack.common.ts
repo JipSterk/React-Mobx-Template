@@ -34,6 +34,6 @@ export const commonConfig: webpack.Configuration = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist'], { verbose: false })
+        new CleanWebpackPlugin(['dist'], { root: path.resolve(__dirname, '..'), verbose: false })
     ]
 }

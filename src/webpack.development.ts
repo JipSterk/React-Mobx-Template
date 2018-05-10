@@ -7,7 +7,7 @@ import * as webpackMerge from 'webpack-merge';
 import { commonConfig } from './webpack.common';
 
 const development: webpack.Configuration = webpackMerge(commonConfig, {
-    mode: 'production',
+    mode: 'development',
     devtool: 'source-map',
     entry: [
         'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr&reload=true',

@@ -65,21 +65,6 @@
     "@types/html-minifier" "*"
     "@types/webpack" "*"
 
-"@types/http-proxy-middleware@*":
-  version "0.17.4"
-  resolved "https://registry.yarnpkg.com/@types/http-proxy-middleware/-/http-proxy-middleware-0.17.4.tgz#788bd64270c8c1a0e67e6e7d8131dcf852fff3cb"
-  dependencies:
-    "@types/connect" "*"
-    "@types/http-proxy" "*"
-    "@types/node" "*"
-
-"@types/http-proxy@*":
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/@types/http-proxy/-/http-proxy-1.16.1.tgz#158022756547605d644e202cd56b99691279b101"
-  dependencies:
-    "@types/events" "*"
-    "@types/node" "*"
-
 "@types/loglevel@*":
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/@types/loglevel/-/loglevel-1.5.3.tgz#adfce55383edc5998a2170ad581b3e23d6adb5b8"
@@ -122,12 +107,6 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@types/spdy@*":
-  version "3.4.4"
-  resolved "https://registry.yarnpkg.com/@types/spdy/-/spdy-3.4.4.tgz#3282fd4ad8c4603aa49f7017dd520a08a345b2bc"
-  dependencies:
-    "@types/node" "*"
-
 "@types/tapable@*":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.2.tgz#e13182e1b69871a422d7863e11a4a6f5b814a4bd"
@@ -145,16 +124,6 @@
     "@types/connect" "*"
     "@types/loglevel" "*"
     "@types/memory-fs" "*"
-    "@types/webpack" "*"
-
-"@types/webpack-dev-server@^2.9.4":
-  version "2.9.4"
-  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-2.9.4.tgz#cc3c398330ba87c0f1c7bfd020cfafb7bb895493"
-  dependencies:
-    "@types/express-serve-static-core" "*"
-    "@types/http-proxy-middleware" "*"
-    "@types/serve-static" "*"
-    "@types/spdy" "*"
     "@types/webpack" "*"
 
 "@types/webpack-hot-middleware@^2.16.3":

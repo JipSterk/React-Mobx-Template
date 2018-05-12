@@ -38,4 +38,4 @@ server.listen(port, 'localhost', (error?: Error): void => {
     }
 
     console.log(`Server running at http://localhost:${port}`);
-})
+});

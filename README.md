@@ -22,3 +22,9 @@ Use Visual Studio Code's built in terminal (powershell) by pressing (<kbd>CTRL</
 
 this will open a new window in Chrome
 * or open preferred browser and browse to `http://localhost:3000`
+
+## Debugging
+
+Pressing F5 in Visual Studio Code will give you an option to select an environment
+select Chrome this will generate a .vscode folder at the root of your directory
+Change `url` in to 3000 (default debugging port) for added debug support please download React Developer Tools from the chrome store

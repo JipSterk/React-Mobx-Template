@@ -1,5 +1,5 @@
-import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as MiniCSSExtractPlugin from 'mini-css-extract-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackMerge from 'webpack-merge';
@@ -17,7 +17,9 @@ const production: webpack.Configuration = webpackMerge(commonConfig, {
         minimize: true
     },
     plugins: [
-        new ExtractTextPlugin('[name].css'),
+        new MiniCSSExtractPlugin({
+            filename: '[name].css'
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'app', 'index.html'),
             minify: {
